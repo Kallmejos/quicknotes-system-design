@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="QuickNotes API client practice project">
+  <title>QuickNotes — API Client</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="api.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="page-header">
+      <p class="eyebrow">QUICKNOTES · SYSTEM DESIGN</p>
+      <h1>Your notes, in one place.</h1>
+      <p class="intro">A small API client for practising loading, creating, and deleting notes.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="notes-heading">
+      <div class="section-heading">
+        <div>
+          <h2 id="notes-heading">Notes</h2>
+          <p class="muted">The browser client uses the JSONPlaceholder practice API.</p>
+        </div>
+        <button id="load-btn" type="button">Load notes</button>
+      </div>
+      <p id="status" class="status status--info" role="status" aria-live="polite">Ready when you are. Load notes to begin.</p>
+      <ul id="notes-list" class="notes-list" aria-label="Notes list"></ul>
+    </section>
+
+    <section class="panel" aria-labelledby="create-heading">
+      <h2 id="create-heading">Create a note</h2>
+      <form id="note-form" novalidate>
+        <div class="field">
+          <label for="title-input">Title <span class="required">(required, maximum 100 characters)</span></label>
+          <input id="title-input" name="title" type="text" maxlength="100" required autocomplete="off" placeholder="A short title">
+          <p class="field-hint">A clear title makes notes easier to find.</p>
+        </div>
+        <div class="field">
+          <label for="body-input">Body <span class="muted">(optional)</span></label>
+          <textarea id="body-input" name="body" rows="4" placeholder="Write something worth remembering..."></textarea>
+        </div>
+        <button id="submit-btn" type="submit">Create note</button>
+      </form>
+      <p class="demo-note">This is a demo API: JSONPlaceholder simulates POST and DELETE requests, but does not permanently save those changes.</p>
+    </section>
+    <footer><p>QuickNotes learning project · API client and backend design</p></footer>
+  </main>
+</body>
+</html>
